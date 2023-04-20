@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js-based/select.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="select-container"></div>
+
+    <template id="select-template">
+        <label for="select-label-lvl1">
+            <select class="select-lvl1" id="parent-category-id" name="select-field-lvl-1">
+                <option value="0">-- Choose a category --</option>
+            </select>
+        </label>
+    </template>
+
+    <template id="option-template">
+        <option value="category-title" data-id="category-id" data-parent-id="parent-id" data-child-count="0">
+            category-title
+        </option>
+    </template>
+</body>
+
+</html>
