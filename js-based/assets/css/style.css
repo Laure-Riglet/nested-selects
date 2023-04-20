@@ -1,0 +1,13 @@
+#select-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+select {
+	display: block;
+	margin: 0 0 10px 0;
+	width: 200px;
+	height: 30px;
+}
