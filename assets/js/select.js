@@ -55,10 +55,14 @@ const select = {
         select.currentDepth += 1;
         const selectClone = select.selectTemplate.content.cloneNode(true);
         const label = selectClone.querySelector('label');
-        label.htmlFor = 'select-label-lvl-' + select.currentDepth;
+        console.log(label);
+        label.htmlFor = 'category-lvl-' + select.currentDepth;
         label.dataset.depth = select.currentDepth;
+        label.ariaLabel = 'Category select level ' + select.currentDepth;
         const selectField = selectClone.querySelector('select');
-        selectField.name = 'select-field-lvl-' + select.currentDepth;
+        console.log(selectClone, selectField);
+        selectField.name = 'category-lvl-' + select.currentDepth;
+        selectField.id = 'category-lvl-' + select.currentDepth;
 
         Object.values(categories).forEach(category => {
             const option = select.createOption(category);
@@ -81,11 +85,13 @@ const select = {
     handleSelectChange: async function (event) {
         const selectField = event.target;
         // Remove all selects after the current one
-        const labelFieldDepth = selectField.parentElement.dataset.depth;
+        const labelFieldDepth = selectField.previousElementSibling.dataset.depth;
         const labels = document.querySelectorAll('label');
         labels.forEach(label => {
             if (label.dataset.depth > labelFieldDepth) {
+                label.nextElementSibling.remove();
                 label.remove();
+
             }
         });
         select.currentDepth = parseInt(labelFieldDepth);
