@@ -12,17 +12,19 @@
 
 <body>
 
-    <div id="select-container"></div>
+    <div id="category-select-container"></div>
+
+    <!-- place the following templates at the end of the body -->
 
     <template id="select-template">
-        <label for="select-label-lvl"></label>
-        <select name="select-name" id="select-id">
+        <label for="category-lvl-X"></label>
+        <select name="category-lvl-X" id="category-lvl-X">
             <option value="0">-- Choose a category --</option>
         </select>
     </template>
 
     <template id="option-template">
-        <option value="category-title" data-id="category-id">
+        <option value="category-id">
             category-title
         </option>
     </template>

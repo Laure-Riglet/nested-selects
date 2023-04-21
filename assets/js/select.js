@@ -1,5 +1,5 @@
 const select = {
-    selectContainer: document.querySelector('#select-container'),
+    selectContainer: document.querySelector('#category-select-container'),
     selectTemplate: document.querySelector('#select-template'),
     optionTemplate: document.querySelector('#option-template'),
     currentDepth: 0,
@@ -54,7 +54,6 @@ const select = {
         label.ariaLabel = 'Category select level ' + select.currentDepth;
 
         const selectField = selectClone.querySelector('select');
-        console.log(selectClone, selectField);
         selectField.name = 'category-lvl-' + select.currentDepth;
         selectField.id = 'category-lvl-' + select.currentDepth;
 
@@ -80,7 +79,6 @@ const select = {
         const option = optionClone.querySelector('option');
         option.value = category.id;
         option.textContent = category.title;
-        option.dataset.id = category.id;
 
         return option;
     },
