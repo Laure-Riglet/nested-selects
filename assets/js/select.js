@@ -96,7 +96,6 @@ const select = {
             if (label.dataset.depth > labelFieldDepth) {
                 label.nextElementSibling.remove();
                 label.remove();
-
             }
         });
 
